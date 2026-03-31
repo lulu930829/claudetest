@@ -1,0 +1,11 @@
+dist
+node_modules
+*.log
+.vscode
+.idea
+.DS_Store
+coverage
+public
+*.md
+*.json
+*.html

@@ -1,0 +1,50 @@
+{
+  "name": "mall-app-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Vue3商城应用前端项目",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write \"src/**/*.{vue,js,ts,jsx,tsx,css,scss,json}\"",
+    "type-check": "vue-tsc --noEmit",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "vue": "^3.5.30",
+    "vue-router": "^4.4.0",
+    "pinia": "^2.2.0",
+    "vant": "^4.8.0",
+    "axios": "^1.7.0",
+    "@vant/touch-emulator": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.0",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/tsconfig": "^0.9.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.1",
+    "vue-tsc": "^3.2.5",
+    "eslint": "^9.15.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "prettier": "^3.3.3",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "sass": "^1.80.6",
+    "@vant/auto-import-resolver": "^1.0.0",
+    "unplugin-auto-import": "^0.18.0",
+    "unplugin-vue-components": "^0.27.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lulu930829/claudetest.git"
+  },
+  "keywords": ["vue3", "vant", "商城", "电商", "typescript"]
+}

@@ -232,4 +232,4 @@ docker run -p 80:80 mall-app-frontend
 
 ---
 
-**Happy Coding!** 🚀
+**Happy Coding!** 🚀                            
