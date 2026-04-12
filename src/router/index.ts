@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import { useUserStore } from '@/stores/user'
 
 // 路由组件懒加载
+const TestPage = () => import('@/views/TestPage.vue')
 const Home = () => import('@/views/Home/HomePage.vue')
 const Login = () => import('@/views/User/LoginPage.vue')
 const Register = () => import('@/views/User/RegisterPage.vue')
@@ -18,6 +19,14 @@ const Payment = () => import('@/views/Order/PaymentPage.vue')
 const NotFound = () => import('@/views/Common/NotFoundPage.vue')
 
 const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/test',
+    name: 'Test',
+    component: TestPage,
+    meta: {
+      title: '测试页面',
+    },
+  },
   {
     path: '/',
     name: 'Home',
@@ -184,7 +193,7 @@ router.beforeEach(async (to, from, next) => {
 })
 
 // 路由错误处理
-router.onError((error) => {
+router.onError(error => {
   console.error('路由错误:', error)
 })
 

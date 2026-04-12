@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "project": {
+    "name": "mall-app-frontend",
+    "description": "Vue 3商城应用前端项目",
+    "type": "vue3-ecommerce",
+    "repository": "https://github.com/lulu930829/claudetest.git"
+  },
+  "permissions": {
+    "git": {
+      "allowCommit": true,
+      "allowPush": false,
+      "allowBranchCreation": true,
+      "requireReview": true
+    },
+    "filesystem": {
+      "allowRead": true,
+      "allowWrite": true,
+      "allowDelete": false,
+      "restrictedPaths": ["node_modules", ".env", "*.secret.*"]
+    },
+    "network": {
+      "allowLocalhost": true,
+      "allowExternal": false,
+      "allowedDomains": ["github.com", "npmjs.com"]
+    },
+    "commands": {
+      "allowShell": true,
+      "allowNpm": true,
+      "requireConfirmation": ["rm -rf", "git reset --hard", "git push --force"]
+    }
+  },
+  "configuration": {
+    "environment": {
+      "nodeVersion": ">=18.0.0",
+      "packageManager": "npm"
+    },
+    "development": {
+      "port": 3000,
+      "apiProxy": "http://localhost:8080",
+      "hotReload": true
+    },
+    "testing": {
+      "framework": "vitest",
+      "coverage": {
+        "enabled": true,
+        "threshold": 80
+      }
+    },
+    "codeQuality": {
+      "lintOnSave": true,
+      "formatOnSave": true,
+      "autoFix": true
+    }
+  },
+  "workflows": {
+    "enabledCommands": ["review", "fix-issue", "deploy"],
+    "defaultAgents": ["code-reviewer"],
+    "autoSkills": ["security-review"]
+  }
+}

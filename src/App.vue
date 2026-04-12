@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import { useUserStore } from '@/stores/user'
-import { onMounted } from 'vue'
+  import { RouterView } from 'vue-router'
+  import { useUserStore } from '@/stores/user'
+  import { onMounted } from 'vue'
 
-const userStore = useUserStore()
+  const userStore = useUserStore()
 
-// 初始化用户信息
-onMounted(() => {
-  userStore.initialize()
-})
+  // 初始化用户信息
+  onMounted(() => {
+    userStore.initialize()
+  })
 </script>
 
 <template>
@@ -17,11 +17,7 @@ onMounted(() => {
     <RouterView v-slot="{ Component, route }">
       <transition name="fade" mode="out-in">
         <keep-alive :include="[]">
-          <component
-            :is="Component"
-            :key="route.fullPath"
-            v-if="!route.meta.keepAlive"
-          />
+          <component :is="Component" :key="route.fullPath" />
         </keep-alive>
       </transition>
     </RouterView>
@@ -34,27 +30,27 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-#app {
-  min-height: 100vh;
-  background-color: var(--van-background-color);
+  #app {
+    min-height: 100vh;
+    background-color: var(--van-background-color);
 
-  // 页面切换动画
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.3s ease;
-  }
+    // 页面切换动画
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 0.3s ease;
+    }
 
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
-  }
+    .fade-enter-from,
+    .fade-leave-to {
+      opacity: 0;
+    }
 
-  // 全局加载样式
-  .global-loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    // 全局加载样式
+    .global-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
   }
-}
 </style>
